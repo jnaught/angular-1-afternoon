@@ -48,9 +48,9 @@
         </div>
       </li>
 
-      <li class="friend" ng-repeat="friend in friends">
+      <li class="friend" ng-repeat="friend in friends | filter:{ name: filters.name, location: { state: filters.state } } | orderBy: sorts.direction + sorts.property">
         <img class="profile-pic" ng-src="{{friend.pic_square}}" />
-        <h3>{{ friend.name }}</h3>a
+        <h3>{{ friend.name }}</h3>
         <div class="location">
           Location: {{ friend.location.city }}, {{ friend.location.state }}, {{ friend.location.country }}
         </div>

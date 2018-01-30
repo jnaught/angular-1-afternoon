@@ -1,4 +1,12 @@
 angular.module("myApp").controller("friendCtrl", function($scope) {
+  $scope.filters = {
+    name: "",
+    state: ""
+  };
+  $scope.sorts = {
+    property: "name",
+    direction: "+"
+  };
   $scope.friends = [
     {
       name: "Preston McNeil",
